@@ -117,12 +117,21 @@ function App() {
             <p>During my experience, I led the migration of my internship project and built two new applications:</p>
             <ul style={{ paddingLeft: '20px' }}>
               <li style={{ marginBottom: '6px' }}><strong>Final Project Migration (Core System & Security):</strong> Migrated the aforementioned internship platform's backend from JS to TS by adopting a Layered Architecture. Integrated Redux, optimized API responses, enforced OWASP Top 10 security standards, and implemented cookie-based authentication with role-based access control.</li>
-              <li style={{ marginBottom: '6px' }}><strong>Fleet Management:</strong> Built a comprehensive platform to track company vehicles (availability, maintenance, accidents, paperwork). Automated fuel cost/liter calculations via Total file parsing. Integrated Google Maps & mycomtrace1 APIs for real-time GPS tracking, mileage updates, and automated alerts for technical control and maintenance.</li>
+              <li style={{ marginBottom: '6px' }}>
+                <strong>Fleet Management:</strong> Built a comprehensive platform to track company vehicles — covering availability, maintenance, accidents, and administrative paperwork. Key capabilities include:
+                <ul style={{ paddingLeft: '18px', marginTop: '6px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <li>🚗 <strong>Vehicle Tracking Dashboard:</strong> Real-time status (available / in-maintenance / in-use) with full lifecycle history per vehicle.</li>
+                  <li>⛽ <strong>Fuel Cost Automation:</strong> Automated cost-per-litre calculations by parsing Total fuel invoices — zero manual entry.</li>
+                  <li>🗺️ <strong>GPS & Mileage Integration:</strong> Live location and odometer sync via <em>Google Maps API</em> and <em>mycomtrace1 API</em>, with automated alerts for upcoming technical controls and maintenance deadlines.</li>
+                  <li>📄 <strong>Carte Grise Scanner (.exe):</strong> Built a standalone Windows desktop app (Python → .exe via PyInstaller) that scans vehicle registration cards (carte grise) using OCR, extracts structured data, and pushes it directly to the platform via a secured REST API — eliminating manual data entry.</li>
+                  <li>🏗️ <strong>Architecture:</strong> Frontend in <em>React + Redux</em> following a strict <em>Feature-Based Architecture</em> (features/, store/, shared/). Backend split between <em>Python</em> (OCR service & automation scripts) and <em>Laravel</em> (core REST API, authentication, database management).</li>
+                </ul>
+              </li>
               <li><strong>Asset Tracking:</strong> Created an app to monitor corporate phones and SIM card assignments, featuring electronic signature validation for external group rules and XLSX data export capabilities.</li>
             </ul>
           </div>
           <div className="pf-tags" style={{ marginTop: '16px' }}>
-            {["React", "Redux", "TypeScript", "Node.js", "OWASP", "Google Maps", "Excel"].map(t => (
+            {["React", "Redux", "TypeScript", "Python", "Laravel", "PyInstaller", "OCR", "Google Maps API", "mycomtrace1 API", "OWASP", "REST API"].map(t => (
               <span className="pf-tag2" key={t}>{t}</span>
             ))}
           </div>
